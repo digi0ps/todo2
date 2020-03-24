@@ -1,6 +1,6 @@
 # Todo List App
 
-Hey, guys I am just a beginner started learning _HTML_,_CSS_ and _Javascript_ no more than three months. Somehow managed to make the so-called "**_Todo List App_**".
+Hey, guys I am just a beginner started learning _HTML_,_CSS_ and _Javascript_ no more than three months. Somehow managed to build the so-called "**_Todo List App_**".
 
 # Document Flow
 
