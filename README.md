@@ -77,7 +77,7 @@ So let's get started!
 - So, when the user deletes/updates a todo, the particular todo will be deleted/updated from the `todo_arr`.
 - Now we populate the deleted/updated todos in the `todo_arr` as well as the localStorage.
 
-> ## Flow
+> ## Flow of the Application
 
 1. Select the required elements from the HTML using the `document.querySelector`.
 
