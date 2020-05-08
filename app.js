@@ -64,6 +64,14 @@ function render() {
     const pHtml = document.createRange().createContextualFragment(itemTemplate);
     const todo = pHtml.querySelector('.todo');
     let checked = pHtml.querySelector('input');
+    const deleteBtn = pHtml.querySelector('.fa-trash-alt')
+    // Method 1 - through wrapper function
+    deleteBtn.addEventListener('click', (e) => {
+      deleteTodo(item.id)
+    })
+    
+    // Method 2 - Through binding
+    deleteBtn.addEventListener('click', deleteTodo.bind(this, item.id))
 
     if (item.completed) {
       checked.setAttribute('checked', item.completed);
@@ -77,10 +85,6 @@ function render() {
   const delEl = document.querySelectorAll('.fa-trash-alt');
   const editEl = document.querySelectorAll('.fa-edit');
 
-  delEl.forEach(del => {
-    del.addEventListener('click', deleteTodo);
-  });
-
   editEl.forEach(ed => {
     ed.addEventListener('click', editTodo);
   });
@@ -90,12 +94,9 @@ function render() {
   });
 }
 
-function deleteTodo(e) {
-  // delete event handler
-  const data = parseInt(e.currentTarget.dataset.todo);
-
+function deleteTodo(targetID) {
   const i = todo_arr.findIndex(item => {
-    return item.id === data;
+    return item.id === targetID;
   });
 
   todo_arr.splice(i, 1);
